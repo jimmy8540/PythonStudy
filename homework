@@ -1,0 +1,26 @@
+#coding=utf-8
+import code
+import re
+#import sys
+#reload(sys)
+#sys.setdefaultencoding('utf8')
+afile = open('/home/chuang/作业/太空旅客.txt', 'r')
+afile1 = afile.read().decode('utf-8')
+afile2 = afile.read()
+#for line in afile1:
+ #   print line,
+#print
+def getfile(bfile):
+    times = 0
+    bfile1 = open(bfile, 'r')
+    for key in bfile1:
+        for line in afile1:
+            match = re.findall(key, line)
+            if match!=[]:
+                times = times +1
+        print key, times
+
+
+getfile('/home/chuang/作业/词典/主题/主题.txt')
+getfile('/home/chuang/作业/词典/主题/题材内容.txt')
+getfile('/home/chuang/作业/词典/主题/题材内容.txt')
